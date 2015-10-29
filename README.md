@@ -5,7 +5,7 @@ This tutorial is based on http://www.luckyryan.com/2013/02/15/create-maven-arche
 ## Step 1 - Create your Mule Project
 Create your standard Mule project as you would normally do. Ensure you are using properties as opposed to hard coding configuration within you application.
 
-## Step 2 - Creating the Archetype
+## Step 2 - Create the Archetype (from Mule Project)
 Go to your Mule Project root folder and run the mvn create archetype command.
 
 ````
