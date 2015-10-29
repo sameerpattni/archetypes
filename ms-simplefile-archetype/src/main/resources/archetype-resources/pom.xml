@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>${groupId}</groupId>
-	<artifactId>${artifactId}</artifactId>
-    <version>${version}</version>
+	<groupId>com.mands</groupId>
+	<artifactId>ms-simplefile</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>mule</packaging>
-	<name>Mule ${artifactId} Application</name>
+	<name>Mule ms-simplefile Application</name>
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,6 +18,34 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.mule.tools</groupId>
+				<artifactId>mule-mmc-rest-plugin</artifactId>
+				<version>1.3.6-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<id>mule-deploy</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<configuration>
+							<goalPrefix>mule-mmc-rest</goalPrefix>
+							<muleApiUrl>${mmc.url}</muleApiUrl>
+							<name>${project.artifactId}</name>
+							<username>${mmc.username}</username>
+							<password>${mmc.password}</password>
+							<appDirectory>${project.basedir}/src/main/app</appDirectory>
+							<finalName>${project.artifactId}-${project.version}</finalName>
+							<version>${project.version}</version>
+							<domain>${mmc.deploy.domain}</domain>
+							<serverGroup>${mmc.serverGroup}</serverGroup>
+							<fileNamePattern>regex:^.*mule-config.xml$</fileNamePattern>
+							<propToReplace>xxxxx</propToReplace>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-app-maven-plugin</artifactId>
