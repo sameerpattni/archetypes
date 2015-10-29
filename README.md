@@ -25,10 +25,10 @@ cd $workspace/my-archetypes/<mule-project>-archetype
 cp -r $workspace/<muleproject>/target/generated-sources/archetype .
 ````
 
+#### Update app.properties
+Open the application properties file  and replace the properties with velocity variables mvn will substitute when your archetype instance is generated.
 
-#### Update src with properties
-Open the properties file for Mule project and replace the properties with velocity variables mvn will substitute when your archetype instance is generated.
-Edit `src/main/resources/archetype-resources/src/main/app/mule-app.properties` and substitue your properties.
+Edit `src/main/resources/archetype-resources/src/main/app/mule-app.properties` or all property files.
 e.g.
 ````
 source-path=${source-path}
