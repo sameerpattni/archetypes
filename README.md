@@ -6,7 +6,7 @@ This tutorial is based on http://www.luckyryan.com/2013/02/15/create-maven-arche
 Create your standard Mule project as you would normally do. Ensure you are using properties as opposed to hard coding configuration within you application.
 
 ## Step 2 - Creating the Archetype
-Go to your Mule Project root folder and run the mvn create archetype command
+Go to your Mule Project root folder and run the mvn create archetype command.
 
 ````
 cd $workspace/<muleproject>
@@ -17,6 +17,14 @@ This will generate the archetype in `target/generated-sources/archetype`
 ## Step 3 - Configure Archetype
 
 Copy the generated archetype source to a new dir and add the relevant configuration properties.
+e.g.
+
+````
+mkdir -p $workspace/my-archetypes/<mule-project>-archetype
+cd $workspace/my-archetypes/<mule-project>-archetype
+cp -r $workspace/<muleproject>/target/generated-sources/archetype .
+````
+
 
 #### Update src with properties
 Open the properties file for Mule project and replace the properties with velocity variables mvn will substitute when your archetype instance is generated.
