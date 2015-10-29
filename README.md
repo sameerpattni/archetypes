@@ -25,8 +25,18 @@ cd $workspace/my-archetypes/<mule-project>-archetype
 cp -r $workspace/<muleproject>/target/generated-sources/archetype .
 ````
 
+#### Add archetypes properties
+Edit `src/test/resources/projects/basic/archetype.properties` and add archetype properties. 
+
+e.g.
+````
+source-path=/path/
+target-path=/path/
+xslt-path=/path/myxslt.xslt
+````
+
 #### Update app.properties
-Open the application properties file  and replace the properties with velocity variables mvn will substitute when your archetype instance is generated.
+Open the application properties file and replace the property values with archetype properties that mvn will substitute when your archetype instance is generated.
 
 Edit `src/main/resources/archetype-resources/src/main/app/mule-app.properties` or all property files.
 e.g.
@@ -34,15 +44,6 @@ e.g.
 source-path=${source-path}
 target-path=${target-path}
 xslt-path=${xslt-path}
-````
-
-#### Add properties to be substituted
-Edit `src/test/resources/projects/basic/archetype.properties` and add your own properties. 
-e.g.
-````
-source-path=/path/
-target-path=/path/
-xslt-path=/path/myxslt.xslt
 ````
 
 #### Prompt for these required properties 
