@@ -18,7 +18,7 @@ This will generate the archetype in `target/generated-sources/archetype`
 
 Copy the generated archetype source to a new dir and add the relevant configuration properties.
 
-## Update src with properties
+#### Update src with properties
 Open the properties file for Mule project and replace the properties with velocity variables mvn will substitute when your archetype instance is generated.
 Edit `src/main/resources/archetype-resources/src/main/app/mule-app.properties` and substitue your properties.
 e.g.
@@ -28,7 +28,7 @@ target-path=${target-path}
 xslt-path=${xslt-path}
 ````
 
-### Add properties to be substituted
+#### Add properties to be substituted
 Edit `src/test/resources/projects/basic/archetype.properties` and add your own properties. 
 e.g.
 ````
@@ -37,7 +37,7 @@ target-path=/path/
 xslt-path=/path/myxslt.xslt
 ````
 
-### Prompt for these required properties 
+#### Prompt for these required properties 
 Edit `src/main/resources/META-INF/maven/archetype-metadata.xml` and add the properties you want to prompt for entry
 e.g.
 ````
@@ -48,13 +48,13 @@ e.g.
 </repositoryProperties>
 ````
 
-## Install archetype into repository
+## Step 4 Install archetype into repository
 This assumes a local install to your .m2 repo. In the root directory for your archetype run mvn install
 ````
 mvn install
 ````
 
-## Generate archetype instance (project)
+## Step 5 Generate archetype instance (project)
 You can now create an instance of that archetype in a working folder.
 
 e.g.
