@@ -50,11 +50,11 @@ xslt-path=${xslt-path}
 Edit `src/main/resources/META-INF/maven/archetype-metadata.xml` and add the properties you want to prompt for entry
 e.g.
 ````
-<repositoryProperties>
-  <repositoryProperty key=“source-path”/>
-  <repositoryProperty key=“target-path”/>
-  <repositoryProperty key=“xslt-path”/>
-</repositoryProperties>
+<requiredProperties>
+  <requiredProperty key=“source-path”/>
+  <requiredProperty key=“target-path”/>
+  <requiredProperty key=“xslt-path”/>
+</requiredProperties>
 ````
 
 ## Step 4 Install archetype into repository
